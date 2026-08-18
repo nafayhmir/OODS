@@ -1,10 +1,8 @@
 //Lab 1, 25i-6180
-
 #include <iostream>
 #include <fstream>
 #include <string>
 using namespace std;
-
 class book{
     private:
     string title;
@@ -48,4 +46,12 @@ class book{
     {
         return price;
     } 
+   
 };
+    
+int main()
+{
+book a("Car","Ali",55);
+cout<<"Author: "<<a.geta()<<endl<<"Title: "<<a.gett()<<endl<<"Price: "<<a.getp();
+
+}
