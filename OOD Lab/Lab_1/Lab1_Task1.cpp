@@ -46,12 +46,39 @@ class book{
     {
         return price;
     } 
-   
+   void display()
+   {
+    cout<<gett()<<endl<<geta()<<endl<<getp()<<endl;
+   }
 };
-    
+
 int main()
 {
-book a("Car","Ali",55);
-cout<<"Author: "<<a.geta()<<endl<<"Title: "<<a.gett()<<endl<<"Price: "<<a.getp();
+    ifstream file("books_list.txt");
+    book b[10];
 
+    if (file.is_open())
+    {
+        cout << "File has opened retrieving data";
+    }
+
+    string title, author;
+    double price;
+    int i = 0;
+
+    while (file >> title >> author >> price && i < 10)
+    {
+        b[i].sett(title);
+        b[i].seta(author);
+        b[i].setp(price);
+        i++;
+    }
+    file.close();
+    
+    for (int i=0; i < 10; i++)
+    {
+        cout <<endl << b[i].gett();
+    }
+    
+return 0;
 }

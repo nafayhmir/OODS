@@ -1,0 +1,41 @@
+List of 10 Recommended Books with Prices in PKR
+
+1. Title: Peer-e-Kamil
+   Author: Umera Ahmed
+   Price: PKR 745
+
+2. Title: Atomic Habits
+   Author: James Clear
+   Price: PKR 800
+
+3. Title: The Forty Rules of Love
+   Author: Elif Shafak
+   Price: PKR 745
+
+4. Title: Rich Dad Poor Dad
+   Author: Robert Kiyosaki
+   Price: PKR 900
+
+5. Title: Jannat Kay Pattay
+   Author: Nemrah Ahmed
+   Price: PKR 745
+
+6. Title: The Silent Patient
+   Author: Alex Michaelides
+   Price: PKR 745
+
+7. Title: It Ends with Us
+   Author: Colleen Hoover
+   Price: PKR 350
+
+8. Title: The Alchemist
+   Author: Paulo Coelho
+   Price: PKR 745
+
+9. Title: A Good Girl's Guide to Murder
+   Author: Holly Jackson
+   Price: PKR 499
+
+10. Title: $100M Offers
+    Author: Alex Hormozi
+    Price: PKR 499
