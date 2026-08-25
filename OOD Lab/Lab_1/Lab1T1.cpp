@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <iomanip>
+
 using namespace std;
 
 class Book {
@@ -49,9 +49,8 @@ public:
 
 int main() {
     ifstream file("books.txt");
-    const int MAX_BOOKS = 10;
-    Book books[MAX_BOOKS];
-    int count = 0;
+    Book books[10];
+    int count=0;
 
     if (!file.is_open()) {
         cout << "Error: Could not open Books.txt" << endl;
@@ -59,15 +58,10 @@ int main() {
     }
 
     cout << "File opened successfully. Reading data...\n";
-
-    string title, author, priceStr;
-
-    while (count < MAX_BOOKS && getline(file, title)) {
+    string title, author, price;
+    while (count < 10 && getline(file, title)) {
         if (!getline(file, author)) break;
-        if (!getline(file, priceStr)) break;
-
-        string price;
-
+        if (!getline(file, price)) break;
         books[count].setTitle(title);
         books[count].setAuthor(author);
         books[count].setPrice(price);
