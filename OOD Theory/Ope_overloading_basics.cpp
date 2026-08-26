@@ -7,21 +7,22 @@ private:
     double imaginary; // Stores the imaginary part of the complex number
 
 public:
-    // Default constructor: initializes a complex number to 0 + 0i
-   // Complex() : real(0.0), imaginary(0.0) {}
+    //Default constructor: initializes a complex number to 0 + 0i
+    Complex() : real(0.0), imaginary(0.0) {}
 
     // Parameterized constructor: initializes a complex number with given real and imaginary parts
     Complex(double r, double i) : real(r), imaginary(i) {}
 
-    void display() const;
-    Complex add(Complex) const;
-    Complex subtract(Complex) const;
-    Complex multiply(Complex) const;
-};
-
-
+    //Overloaded addition
+    Complex operator+(Complex c)
+    {
+        Complex s;
+        s.real=real+c.real;
+        s.imaginary=imaginary+c.imaginary;
+        return s;
+    };
     // Method to display the complex number in "a + bi" format
-    void Complex::display() const {
+    void display() const {
         cout << real;
         if (imaginary >= 0) {
             cout << " + " << imaginary << "i"<<endl;
@@ -31,14 +32,14 @@ public:
     }
 
     // addition of two complex numbers
-    Complex Complex::add(Complex other) const {
+    Complex add(Complex other) const {
         double r = real + other.real;
         double i = imaginary + other.imaginary;
         return Complex(r, i);
     }
 
     // subtraction of two complex numbers
-    Complex Complex::subtract(Complex other) const {
+    Complex subtract(Complex other) const {
         double r = real - other.real;
         double i = imaginary - other.imaginary;
         return Complex(r, i);
@@ -46,14 +47,15 @@ public:
     }
 
     // multiplication of two complex numbers
-    Complex Complex::multiply(Complex other) const {
+    Complex multiply(Complex other) const {
         double r = (real * other.real) - (imaginary * other.imaginary);
         double i = (real * other.imaginary) + (imaginary * other.real);
         return Complex(r, i);
     }
+};
 
-
-int main() {
+int main()
+{
     cout << "=== Complex Number Operations ===" << endl;
 
     // Create complex numbers
@@ -85,8 +87,10 @@ int main() {
     product.display();
     cout << endl;
 
+    Complex sum2=num1+num2;
+    cout<<"Operator Overloading: ";
+    sum2.display();
+    cout<<endl;
 
     return 0;
 }
-
-
