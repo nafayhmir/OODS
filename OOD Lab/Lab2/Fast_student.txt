@@ -1,0 +1,12 @@
+Ali Raza,21001,101
+Sara Khan,21002,102
+Ali Raza,21001,103
+Bilal Ahmed,21003,101
+Sara Khan,21002,105
+Hassan Tariq,21004,104
+Bilal Ahmed,21003,106
+Ayesha Malik,21005,102
+Hassan Tariq,21004,107
+Ayesha Malik,21005,108
+Ali Raza,21001,105
+Zainab Fatima,21006,101
