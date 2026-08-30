@@ -21,6 +21,13 @@ public:
         s.imaginary=imaginary+c.imaginary;
         return s;
     };
+    //Overloaded Subtraction
+    Complex operator-(Complex c)
+    {
+        Complex d;
+        d.real=real-c.real;
+        d.imaginary=imaginary-c.imaginary;
+    }
     // Method to display the complex number in "a + bi" format
     void display() const {
         cout << real;
@@ -52,7 +59,16 @@ public:
         double i = (real * other.imaginary) + (imaginary * other.real);
         return Complex(r, i);
     }
+    
+    //Overloading << (Output Operator)
+    //ostream is used for << and istream is used for >>
+    friend ostream& operator<<(ostream &,Complex c)  //added friend as it outputs to ostream and not complex
+    {
+     cout<<c.real<<"+"<<c.imaginary<<"i";
+    } 
+    
 };
+
 
 int main()
 {
@@ -89,8 +105,10 @@ int main()
 
     Complex sum2=num1+num2;
     cout<<"Operator Overloading: ";
-    sum2.display();
+    sum2.display(); //we can use << as it is now overloaded
     cout<<endl;
+    cout<<sum2;
+
 
     return 0;
 }
