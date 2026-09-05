@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": ".",
-      "program": "build/Debug/outDebug",
+      "cwd": "c:/Users/MASTER/Desktop/Nafayh/FAST/Sem 3/OODS/OOD Theory",
+      "program": "c:/Users/MASTER/Desktop/Nafayh/FAST/Sem 3/OODS/OOD Theory/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
