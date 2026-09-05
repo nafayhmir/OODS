@@ -1,3 +1,6 @@
+//Assignment #1
+//25i-6180,Muhammad Nafayh Akhlaq
+//All mentioned functions are working in header file
 #include <iostream>
 using namespace std;
 #ifndef CLASS_H
