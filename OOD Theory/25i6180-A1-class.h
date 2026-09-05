@@ -1,6 +1,6 @@
-//Assignment #1
-//25i-6180,Muhammad Nafayh Akhlaq
-//All mentioned functions are working in header file
+// Assignment #1
+// 25i-6180,Muhammad Nafayh Akhlaq
+// All mentioned functions are working in header file
 #include <iostream>
 using namespace std;
 #ifndef CLASS_H
@@ -12,7 +12,7 @@ private:
     int arr[3][3];
 
 public:
-    matrix()
+    matrix() // Default Constructor
     {
         for (int i = 0; i < 3; i++)
         {
@@ -22,7 +22,7 @@ public:
             }
         }
     }
-    matrix(int a, int b, int c, int d, int e, int f, int g, int h, int i)
+    matrix(int a, int b, int c, int d, int e, int f, int g, int h, int i) // Parameterized COnstructor
     {
         arr[0][0] = a;
         arr[0][1] = b;
@@ -42,7 +42,6 @@ public:
             for (int j = 0; j < 3; j++)
             {
                 temp.arr[i][j] = arr[i][j] + a.arr[i][j];
-                
             }
         }
         return temp;
@@ -55,7 +54,6 @@ public:
             for (int j = 0; j < 3; j++)
             {
                 temp.arr[i][j] = arr[i][j] - a.arr[i][j];
-                
             }
         }
         return temp;
@@ -67,10 +65,10 @@ public:
         {
             for (int j = 0; j < 3; j++)
             {
-                for(int k=0;k<3;k++)
+                temp.arr[i][j]=0;
+                for (int k = 0; k < 3; k++)
                 {
-                temp.arr[i][j] = arr[i][k] * a.arr[k][j];
-                
+                    temp.arr[i][j] += arr[i][k] * a.arr[k][j];
                 }
             }
         }
@@ -84,11 +82,9 @@ public:
             for (int j = 0; j < 3; j++)
             {
                 temp.arr[i][j] = arr[i][j] * a;
-
             }
         }
         return temp;
-
     }
     bool operator==(matrix a)
     {
@@ -100,11 +96,15 @@ public:
             {
                 if (arr[i][j] == a.arr[i][j])
                 {
-                    b=1;
+                    b = 1;
                 }
                 else
                 {
-                    b=0;
+                    b = 0;
+                }
+                if(b==0)
+                {
+                    return false;
                 }
             }
         }
@@ -122,7 +122,7 @@ public:
                 s2 += a.arr[i][j];
             }
         }
-        if (s1 > s2)
+        if (s1 < s2)
         {
             return 1;
         }
@@ -138,9 +138,9 @@ public:
         {
             for (int j = 0; j < 3; j++)
             {
-                a<< b.arr[i][j] << "\t";
+                a << b.arr[i][j] << "\t";
             }
-            cout << endl;
+            a << endl;
         }
         return a;
     }
@@ -150,7 +150,7 @@ public:
         {
             for (int j = 0; j < 3; j++)
             {
-                a.arr[i][j] += arr[i][j];
+                arr[i][j] += a.arr[i][j];
             }
         }
         return a;
@@ -161,14 +161,14 @@ public:
         {
             for (int j = 0; j < 3; j++)
             {
-                a.arr[i][j] -= arr[i][j];
+                arr[i][j] -= a.arr[i][j];
             }
         }
         return a;
     }
-    bool operator!()
+    bool operator!() // Identity Checking
     {
-        bool a=1;
+        bool a = 1;
         for (int i = 0; i < 3; i++)
         {
             for (int j = 0; j < 3; j++)
@@ -193,4 +193,4 @@ public:
     }
 };
 
- #endif
+#endif
