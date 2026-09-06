@@ -22,7 +22,7 @@ public:
             }
         }
     }
-    matrix(int a, int b, int c, int d, int e, int f, int g, int h, int i) // Parameterized COnstructor
+    matrix(int a, int b, int c, int d, int e, int f, int g, int h, int i) // Parameterized Constructor
     {
         arr[0][0] = a;
         arr[0][1] = b;
