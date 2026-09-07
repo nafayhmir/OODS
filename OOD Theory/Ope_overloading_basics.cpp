@@ -27,6 +27,7 @@ public:
         Complex d;
         d.real=real-c.real;
         d.imaginary=imaginary-c.imaginary;
+        return d;
     }
     // Method to display the complex number in "a + bi" format
     void display() const {
@@ -62,11 +63,48 @@ public:
     
     //Overloading << (Output Operator)
     //ostream is used for << and istream is used for >>
-    friend ostream& operator<<(ostream &,Complex c)  //added friend as it outputs to ostream and not complex
+    friend ostream& operator<<(ostream &a,Complex c)  //added friend as it outputs to ostream and not complex
     {
-     cout<<c.real<<"+"<<c.imaginary<<"i";
+     a<<c.real<<"+"<<c.imaginary<<"i";
+     return a;
     } 
     
+};
+class count{
+private:
+int c;
+public:
+void setc(int a)
+{
+    c=a;
+}
+int getc()
+{
+    return c;
+}
+count()
+{
+    c=0;
+}
+count(int a)
+{
+    c=a;
+}
+count& operator++() //Pre increment
+{
+    ++c;
+    return *this;//Return current state of calling function
+}
+count operator++(int)//Post Increment
+{
+    count temp=*this; //Stores pre increment data in temp
+    ++c; //Increments c
+    return temp; //returns old state
+}
+void display()
+{
+    cout<<c;
+}
 };
 
 
@@ -107,8 +145,19 @@ int main()
     cout<<"Operator Overloading: ";
     sum2.display(); //we can use << as it is now overloaded
     cout<<endl;
-    cout<<sum2;
+    cout<<sum2<<endl;
 
-
+    cout<<"===============================";
+    cout<<"Counter Arithmetic"<<endl;
+    count c;
+    int x;
+    x=c.getc();
+    cout<<x<<endl;
+    ++c;
+    x=c.getc();
+    cout<<x<<endl;
+    c++;
+    x=c.getc();
+    cout<<x<<endl;
     return 0;
 }
