@@ -1,3 +1,6 @@
+// Assignment #2
+// 25i-6180,Muhammad Nafayh Akhlaq
+// All mentioned functions are working in header file
 #include <iostream>
 #include "25i6180-A2-string.h"
 using namespace std;
