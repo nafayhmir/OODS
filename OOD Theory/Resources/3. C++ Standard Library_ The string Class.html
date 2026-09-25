@@ -1,0 +1,251 @@
+
+<!-- saved from url=(0124)file:///D:/My%20Docs/Teaching/P2/fall%202014/Class%20Lectures/Lecture-C++%20Standard%20Library%20%20The%20string%20Class.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>C++ Standard Library: The string Class</title>
+  </head>
+
+  <body bgcolor="white">
+    <h1>C++ Standard Library: The <b>string</b> Class</h1>
+
+    <p>
+      The <b>string</b> class is part of the C++ standard library.
+      A string represents a sequence of characters.
+
+    </p><p>
+      To use the string class, #include the header file:
+      </p><ul>
+      <pre>#include &lt;string&gt;</pre>
+      </ul>
+
+    <h3>Constructors:</h3>
+    <ul>
+      <li>
+	<tt>string ()</tt>
+	<br>
+	- creates an empty string (<code>""</code>)
+
+      <p>
+      </p></li><li>
+	<code>string ( other_string )</code>
+	<br>
+	- creates a string identical to <code>other_string</code>
+
+      <p>
+      </p></li><li>
+	<code>string ( other_string, position, count )</code>
+	<br>
+	- creates a string that contains <code>count</code> characters
+	from <code>other_string</code>, starting at <code>position</code>.
+	If <code>count</code> is missing (only the first two arguments
+	are given), all the characters from <code>other_string</code>,
+	starting at <code>position</code> and going to the end of
+	<code>other_string</code>, are included in the new string.
+
+      <p>
+      </p></li><li>
+	<code>string ( count, character )</code>
+	<br>
+	- create a string containing <code>character</code> repeated
+	<code>count</code> times
+    </li></ul>
+
+    <p>
+      Examples:
+      <br>
+      </p><pre>	string s1;                //   s1 = ""                <br>
+	string s2( "abcdef" );    //   s2 = "abcdef"          <br>
+	string s3( s2 );          //   s3 = "abcdef"          <br>
+	string s4( s2, 1 );       //   s4 = "bcdef"           <br>
+	string s5( s2, 3, 2 );    //   s5 = "de"              <br>
+	string s6( 10, '-' );     //   s6 = "----------"      <br>
+      </pre>
+
+    <p>
+      The <b>string</b> class also has a destructor that takes
+      care of freeing the memory storing the characters when the object
+      is destroyed.
+
+    </p><h3>Constant Member Functions:</h3>
+    <p>
+      These functions do not modify the string.
+
+    </p><ul>
+      <li>
+	<code>const char * data ()</code>
+	<br>
+	- returns a C-style null-terminated string of characters
+	representing the contents of the string
+
+      <p>
+      </p></li><li>
+	<code>unsigned int length ()</code>
+	<br>
+	- returns the length of the string
+
+      <p>
+      </p></li><li>
+	<code>unsigned int size ()</code>
+	<br>
+	- returns the length of the string (i.e., same as the length function)
+
+      <p>
+      </p></li><li>
+	<code>bool empty ()</code>
+	<br>
+	- returns <code>true</code> if the string is empty, <code>false</code>
+	otherwise
+    </li></ul>
+
+    <h3>Operators Defined for <code>string</code>:</h3>
+
+    <ul>
+      <li>
+	<i>Assign</i> <code>=</code>
+	<br>
+	<code>
+	  string s1;<br>
+	  string s2;<br>
+	  ...<br>
+	  s1 = s2; // the contents of s2 is <b>copied</b> to s1
+	</code>
+
+      <p>
+      </p></li><li>
+	<i>Append</i> <code>+=</code>
+	<br>
+	<code>
+	  string s1( "abc" );<br>
+	  string s2( "def" );<br>
+	  ...<br>
+	  s1 += s2; // s1 = "abcdef" now
+	</code>
+
+      <p>
+      </p></li><li>
+	<i>Indexing</i> <code>[]</code>
+	<br>
+	<code>
+	  string s( "def" );<br>
+	  char c = s[2];   // c = 'f' now<br>
+	  s[0] = s[1];     // s = "eef" now
+	</code>
+
+      <p>
+      </p></li><li>
+	<i>Concatenate</i> <code>+</code>
+	<br>
+	<code>
+	  string s1( "abc" );<br>
+	  string s2( "def" );<br>
+	  string s3;<br>
+	  ...<br>
+	  s3 = s1 + s2; // s3 = "abcdef" now
+	</code>
+
+      <p>
+      </p></li><li>
+	<i>Equality</i> <code>==</code>
+	<br>
+	<code>
+	  string s1( "abc" );<br>
+	  string s2( "def" );<br>
+	  string s3( "abc" );<br>
+	  ...<br>
+	  bool flag1 = ( s1 == s2 ); // flag1 = false now<br>
+	  bool flag2 = ( s1 == s3 ); // flag2 = true now
+	  </code>
+
+      <p>
+      </p></li><li>
+	<i>Inequality</i> <code>!=</code>
+	<br>
+	- the inverse of equality
+
+      <p>
+      </p></li><li>
+	<i>Comparison</i> <code>&lt;, &gt;, &lt;=, &gt;=</code>
+	<br>
+	- performs case-insensitive comparison
+	<br>
+	<code>
+	  string s1 = "abc";<br>
+	  string s2 = "ABC";<br>
+	  string s3 = "abcdef";<br>
+	  ...<br>
+	  bool flag1 = ( s1 &lt; s2 ); // flag1 = false now<br>
+	  bool flag2 = ( s2 &lt; s3 ); // flag2 = true now
+	</code>
+    </li></ul>
+
+    <h3>Member Functions:</h3>
+
+    <ul>
+
+      <li>
+	<code>void swap ( other_string )</code>
+	<br>
+	- swaps the contents of this string with the contents of
+	<code>other_string</code>.
+	<br>
+	<code>
+	  string s1( "abc" );<br>
+	  string s2( "def" );<br>
+	  s1.swap( s2 ); // s1 = "def", s2 = "abc" now
+	</code>
+	<br><br>
+      </li>
+
+      <li>
+	<code>string &amp; append ( other_string )</code>
+	<br>
+	- appends <code>other_string</code> to this string, and returns a
+	reference to the result string.
+	<br><br>
+      </li>
+
+      <li>
+	<code>string &amp; insert ( position, other_string )</code>
+	<br>
+	- inserts <code>other_string</code> into this string at
+	the given <code>position</code>, and returns a
+	reference to the result string.
+	<br><br>
+      </li>
+
+      <li>
+	<code>string &amp; erase ( position, count )</code>
+	<br>
+	- removes <code>count</code> characters from this string, starting
+	with the character at the given <code>position</code>. If
+	<code>count</code> is ommitted (only one argument is given),
+	the characters up to the end of the string are removed. If both
+	<code>position</code> and <code>count</code> are omitted
+	(no arguments are given), the string is cleared (it becomes the empty
+	string). A reference to the result string is returned.
+	<br><br>
+      </li>
+
+      <li>
+	<code>unsigned int find ( other_string, position )</code>
+	<br>
+	- finds <code>other_string</code> inside this string
+	and returns its position. If <code>position</code> is
+	given, the search starts there in this string, otherwise it starts at
+	the beginning of this string.
+	<br><br>
+      </li>
+
+      <li>
+	<code>string substr ( position, count )</code>
+	<br>
+	- returns the substring starting at <code>position</code>
+	and of length <code>count</code> from this string
+	<br><br>
+      </li>
+
+    </ul>
+
+    <hr>
+  
+
+</body></html>
