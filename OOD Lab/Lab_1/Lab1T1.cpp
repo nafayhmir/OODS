@@ -1,9 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-
 using namespace std;
-
 class Book {
 private:
     string title;
@@ -18,7 +16,6 @@ public:
         author = "";
         price = 0.0;
     }
-
     // Parameterized Constructor
     Book(string t, string a, string p) 
     {
@@ -29,7 +26,6 @@ public:
     void setTitle(string t)  { title = t; }
     void setAuthor(string a) { author = a; }
     void setPrice(string p)  { price = p; }
-
     string getTitle()  const 
     {
      return title; 
@@ -67,7 +63,6 @@ int main() {
         books[count].setPrice(price);
         count++;
     }
-
     file.close();
     for (int i = 0; i < count; i++) {
         books[i].display();
