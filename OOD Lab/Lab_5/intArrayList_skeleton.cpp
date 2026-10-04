@@ -3,7 +3,7 @@ using namespace std;
 
 class intArrayList
 {
-public:
+public: //GIVEN BEFOREHAND
     bool isEmpty() const;
     bool isFull() const;
     int listSize() const;
@@ -24,11 +24,11 @@ public:
     ~intArrayList();
     const intArrayList &operator=(const intArrayList &otherList);
 
-protected:
+protected: //Accessible for member functions but not for outside functions
     int *list;
-    int length;
+    int length; //same as size variable studied in linked list
     int maxSize;
-};
+};//diff from private, they arent accesible if they are written outside class
 
 bool intArrayList::isEmpty() const
 { // empty only if length is 0
@@ -64,7 +64,7 @@ bool intArrayList::isItemAtEqual(int pos, int item) const
     if (pos < 0 || pos >= length)
         return false; // checks if pos is inside array
 
-    return list[pos] == item; // check if position given value is same as parameter value
+    return list[pos] == item; // checks if position given value is same as parameter value
 }
 
 void intArrayList::insertAt(int pos, int insertItem)
@@ -78,7 +78,7 @@ void intArrayList::insertAt(int pos, int insertItem)
         list[i] = list[i - 1];
     }
     list[pos] = insertItem;
-    length++;
+    length++; //++so size is consistent with number of array members
 }
 
 void intArrayList::insertEnd(int insertItem)
@@ -87,7 +87,7 @@ void intArrayList::insertEnd(int insertItem)
         return;
 
     list[length] = insertItem;
-    length++;
+    length++; //inserts at end so no need of traversal
 }
 
 void intArrayList::removeAt(int pos)
@@ -95,12 +95,13 @@ void intArrayList::removeAt(int pos)
     if (pos < 0 || pos >= length)
         return;
 
-    // Shift everything left
+    //Moves everything one space to left  i.e 
+    //in 1,2,3,4,5,6,7,8,9 removing from pos 2 we get 1,2,4,5,6,7,8,9
     for (int i = pos; i < length - 1; i++)
     {
-        list[i] = list[i + 1];
+        list[i] = list[i + 1]; //
     }
-    length--;
+    length--; //To reduce length
 }
 
 void intArrayList::retrieveAt(int pos, int &retItem) const
@@ -129,7 +130,7 @@ int intArrayList::seqSearch(int item) const
 { // search using for loop
     for (int i = 0; i < length; i++)
     {
-        if (list[i] == item)
+        if (list[i] == item) //compares sent obj and object at i
             return i;
     }
     return -1;
@@ -179,7 +180,7 @@ intArrayList::~intArrayList()
     delete[] list;
 }
 
-// Assignment Operator
+// Copy Constructor
 const intArrayList &intArrayList::operator=(const intArrayList &otherList)
 {
     if (this != &otherList)
