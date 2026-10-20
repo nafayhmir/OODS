@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/MASTER/Desktop/Nafayh/FAST/Sem 3/OODS/OOD Theory",
-      "program": "c:/Users/MASTER/Desktop/Nafayh/FAST/Sem 3/OODS/OOD Theory/build/Debug/outDebug",
+      "cwd": "c:/Users/MASTER/Desktop/Nafayh/FAST/Sem 3/OODS/OOD Theory/Resources",
+      "program": "c:/Users/MASTER/Desktop/Nafayh/FAST/Sem 3/OODS/OOD Theory/Resources/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
